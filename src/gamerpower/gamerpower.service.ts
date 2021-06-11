@@ -12,7 +12,7 @@ export class GamerPowerService {
     ) {}
 
     async getAllGiveaways(): Promise<Giveaway[] | ErrorResponse> {
-        const giveaways = await this.httpClient.get<Giveaway[]>('https://www.gamerpower.com/api/giveaways');
+        const giveaways = await this.httpClient.get<Giveaway[]>('GET https://www.gamerpower.com/api/filter?platform=epic-games-store.steam.android&type=game.loot');
         return giveaways;
     }
 
